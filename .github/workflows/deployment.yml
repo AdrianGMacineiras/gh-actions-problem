@@ -2,7 +2,7 @@ name: Lint, Test & Scripts
 on: workflow_dispatch
 jobs:
   dependencies:
-    run-on: macos-latest
+    runs-on: macos-latest
     steps:
       - name: Install NodeJS
         uses: actions/setup-node@v4
@@ -12,19 +12,19 @@ jobs:
         run: npm ci
   lint:
     needs: lint
-    run-on: macos-latest
+    runs-on: macos-latest
     steps:
       - name: Lint
         run: npm run lint
   test:
     needs: lint
-    run-on: macos-latest
+    runs-on: macos-latest
     steps:
       - name: Test
         run: npm run test
   build:
     needs: test
-    run-on: macos-latest
+    runs-on: macos-latest
     steps:
       - name: Build
         run: npm run build
