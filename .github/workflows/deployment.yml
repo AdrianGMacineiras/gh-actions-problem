@@ -1,5 +1,5 @@
 name: Lint, Test & Scripts
-on: workflow_dispatch
+on: push
 jobs:
   dependencies:
     runs-on: macos-latest
