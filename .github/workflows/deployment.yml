@@ -3,13 +3,13 @@ on: workflow_dispatch
 jobs:
   dependencies:
     run-on: macos-latest
-      steps:
-        - name: Install NodeJS
-          uses: actions/setup-node@v4
-          with:
-            node-version: 18
-        - name: Install dependencies
-          run: npm ci
+    steps:
+      - name: Install NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: npm ci
   lint:
     needs: lint
     run-on: macos-latest
