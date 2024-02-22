@@ -6,10 +6,6 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v4
-      - name: Install NodeJS
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
       - name: Install dependencies
         run: npm ci
   lint:
@@ -30,3 +26,9 @@ jobs:
     steps:
       - name: Build
         run: npm run build
+  deploy:
+    needs: build
+    runs-on:  macos-latest
+    steps:
+      - name: Deploy code
+      run: echo "Deploying..."
