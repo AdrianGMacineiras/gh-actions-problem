@@ -31,4 +31,4 @@ jobs:
     runs-on:  macos-latest
     steps:
       - name: Deploy code
-      run: echo "Deploying..."
+        run: echo "Deploying..."
